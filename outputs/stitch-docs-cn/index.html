@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stitch 文档 · 中文版</title>
+  <meta name="description" content="Stitch 文档的中文整理版：Learn、MCP、SDK、DESIGN.md 与 Agent Skills。">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#/docs/learn/overview/" aria-label="Stitch 中文文档首页"><span class="brand-mark">✦</span><span>Stitch</span><small>中文文档</small></a>
+      <div class="topbar-actions">
+        <button class="icon-button" id="search-toggle" aria-label="打开搜索" title="搜索"><span>⌕</span><kbd>Ctrl K</kbd></button>
+        <button class="icon-button" id="theme-toggle" aria-label="切换主题" title="切换主题">◐</button>
+        <button class="icon-button mobile-menu" id="mobile-menu" aria-label="打开菜单">☰</button>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-scroll"><div class="sidebar-label">文档导航</div><nav id="main-nav" aria-label="主要导航"></nav></div>
+      </aside>
+      <main class="content-wrap">
+        <div class="content-grid"><article id="doc-content" class="doc-content"></article><aside class="toc" id="toc"><div class="toc-title">本页目录</div><div id="toc-list"></div></aside></div>
+        <footer class="footer"><span>Stitch 中文文档整理版</span><a href="https://stitch.withgoogle.com/docs" target="_blank" rel="noreferrer">查看英文原站 ↗</a></footer>
+      </main>
+    </div>
+  </div>
+  <div class="search-layer" id="search-layer" aria-hidden="true"><div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索文档"><div class="search-head"><span>搜索文档</span><button id="search-close" aria-label="关闭搜索">Esc</button></div><input id="search-input" type="search" placeholder="输入标题、关键词或命令…" autocomplete="off"><div class="search-results" id="search-results"></div></div></div>
+  <script src="scripts/content.js"></script><script src="scripts/app.js"></script>
+</body>
+</html>
