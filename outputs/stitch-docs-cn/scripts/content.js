@@ -1,11 +1,11 @@
 const P=(path,kicker,title,intro,sections,next,prev)=>({path,kicker,title,intro,sections,next,prev});
 const S=(title,blocks)=>({title,blocks});
-const p=text=>({type:'p',text}), list=items=>({type:'list',items}), callout=text=>({type:'callout',text}), code=(code,label)=>({type:'code',code,label}), prompt=rows=>({type:'prompt',rows}), table=(headers,rows)=>({type:'table',headers,rows});
+const p=text=>({type:'p',text}), list=items=>({type:'list',items}), callout=text=>({type:'callout',text}), image=(src,alt,caption)=>({type:'image',src,alt,caption}), code=(code,label)=>({type:'code',code,label}), prompt=rows=>({type:'prompt',rows}), table=(headers,rows)=>({type:'table',headers,rows});
 const link=(path,title)=>({path,title});
 
 const learn=[
 P('/docs/learn/overview/','基础','使用 Stitch 设计所需的一切','一份带有明确观点的快速入门：从想法开始，在迭代中找到合适的设计。',[
- S('更好的提示词，也带来更好的设计',[p('构思是关键。最难的是越过空白页面；真正高质量的结果来自持续迭代，而不是一次写出完美提示词。')]),
+ S('更好的提示词，也带来更好的设计',[p('构思是关键。最难的是越过空白页面；真正高质量的结果来自持续迭代，而不是一次写出完美提示词。'),image('https://stitch.withgoogle.com/docs/stitch-overview-gen-swoop@2x.png','Stitch 生成设计概览','Stitch 生成设计概览')]),
  S('起始提示词示例',[p('初始提示词可以遵循这个公式：'),prompt([{key:'想法',value:'页面或应用是什么。'},{key:'主题',value:'核心视觉主题与氛围。'},{key:'内容',value:'页面需要呈现的具体内容。'},{key:'图片',value:'可选的参考图片。'}]),p('先描述要放在页面上的具体内容和大致气质，不必一开始就纠结字体和十六进制颜色。'),prompt([{key:'想法',value:'一个名为「The Pacing Project」的跑步播客落地页。'},{key:'主题',value:'现代、锐利、高对比；使用黑白与硬朗的几何角度。'},{key:'内容',value:'Hero 区域包含「关于比赛与正确配速的故事和经验」，并提供播客平台链接。'}])]),
  S('选择设备类型',[p('应用还是网页？先选一个最合适的形式即可。Stitch 支持在迭代过程中转换设备类型。现在点击生成。')]),
  S('浏览并控制画布',[p('把画布操作理解为「选择」与「导航」两种模式。按 `V` 切换 Select 工具，按 `H` 切换 Pan 工具；按 `⌘←` / `Ctrl+←` 回到最近的屏幕，按 `⌘→` / `Ctrl+→` 在屏幕间切换。按 `?` 可查看全部快捷键。')]),
@@ -16,7 +16,7 @@ P('/docs/learn/overview/','基础','使用 Stitch 设计所需的一切','一份
  S('持续构思，持续创造',[p('更好的结果来自有效提示词与反复构思。一直迭代，直到设计真正符合你的目标。')])
 ],link('/docs/learn/prompting/','高效提示词')),
 P('/docs/learn/prompting/','学习','高效提示词','通过有效的提示词与屏幕级迭代，稳定地获得更好的设计结果。',[
- S('从项目开始',[p('可以从宽泛概念开始，也可以直接描述细节。复杂应用建议先定高层方向，再按屏幕逐步深入。')]),
+ S('从项目开始',[p('可以从宽泛概念开始，也可以直接描述细节。复杂应用建议先定高层方向，再按屏幕逐步深入。'),image('assets/images/effective-prompting@2x.png','高效提示词示例','高效提示词示例')]),
  S('高层提示词与详细提示词',[p('先从通用想法开始，再补充核心功能。'),prompt([{key:'高层',value:'一个为马拉松跑者设计的应用。'}]),prompt([{key:'详细',value:'一个帮助马拉松跑者加入社区、寻找伙伴、获得训练建议并发现附近赛事的应用。'}])]),
  S('用形容词设定气质',[p('使用形容词影响颜色、字体与图片风格。'),prompt([{key:'氛围',value:'充满活力、鼓舞人心的健身追踪应用。'}]),prompt([{key:'氛围',value:'极简、专注的冥想应用。'}])]),
  S('逐屏迭代应用',[p('Stitch 最适合清晰、具体的指令。每次只聚焦一个屏幕或组件，并完成一到两个改动。'),prompt([{key:'目标元素',value:'登录屏幕的主 CTA 按钮'},{key:'具体改变',value:'放大按钮，使用品牌主蓝色。'}])]),
@@ -34,7 +34,7 @@ P('/docs/learn/device-types/','学习','设备类型','了解 Stitch 的网页�
  S('提示词示例',[prompt([{key:'目标',value:'一个适用于手机的习惯追踪应用。'},{key:'交互',value:'底部四项导航、可滑动打卡卡片、适合单手操作。'},{key:'设备',value:'iPhone 竖屏，顶部避开安全区域。'}])])
 ],link('/docs/learn/design-modes/','设计模式'),link('/docs/learn/prompting/','高效提示词')),
 P('/docs/learn/design-modes/','学习','设计模式','理解 Stitch 的快速、精确与主题编辑模式，让每一次迭代都更可控。',[
- S('从模式开始',[p('不同模式对应不同阶段：快速模式用于探索方向，精确模式用于锁定布局与组件，主题编辑用于一次性调整全局视觉规则。')]),
+ S('从模式开始',[p('不同模式对应不同阶段：快速模式用于探索方向，精确模式用于锁定布局与组件，主题编辑用于一次性调整全局视觉规则。'),image('https://stitch.withgoogle.com/docs/design-modes-pink-swoosh@2x.png','Stitch 设计模式','Stitch 设计模式')]),
  S('快速生成',[list(['适合空白页面和概念探索。','优先验证信息架构、内容层级和整体气质。','一次生成多个方向，再挑选值得深化的版本。'])]),
  S('精确编辑',[list(['针对单个屏幕或组件下达定向指令。','明确目标、位置、尺寸、颜色与行为。','尽量一次只改一个主要视觉问题。'])]),
  S('编辑主题',[p('从 Generate → Edit Theme 进入主题面板，可调整浅色/深色、品牌强调色、组件圆角、字体与整体密度。主题修改适合处理跨组件的一致性问题。')]),
@@ -143,7 +143,7 @@ P('/docs/design-md/overview/','DESIGN.md','什么是 DESIGN.md？','一份供 AI
  S('它定义什么',[table(['文件','读取者','定义内容'],[['README.md','人','项目是什么'],['AGENTS.md','编码代理','如何构建项目'],['DESIGN.md','设计代理','项目应该如何呈现']])]),
  S('它带来的结果',[p('当 Stitch 读取 DESIGN.md 时，每个屏幕都会遵循同一套颜色、排版和组件模式。它是会随设计一起演进的 living artifact，而不是一次性配置。')]),
  S('文件结构',[p('每份 DESIGN.md 有两层：包含精确设计令牌的 YAML front matter，以及解释设计原因的 Markdown 正文。令牌告诉代理使用什么值，文字说明为什么使用这些值。')]),
- S('三种创建方式',[list(['让代理根据一句气质描述自动生成。','提供网站 URL 或图片，从已有品牌提取。','手写 Markdown 与 YAML，精确控制每个令牌。']),prompt([{key:'提示词',value:'一个温暖、圆角、友好的手作咖啡店点单应用。'}])]),
+ S('三种创建方式',[image('https://stitch.withgoogle.com/docs/design-systems-design-md.png','从 Stitch 生成 DESIGN.md','从 Stitch 生成 DESIGN.md'),list(['让代理根据一句气质描述自动生成。','提供网站 URL 或图片，从已有品牌提取。','手写 Markdown 与 YAML，精确控制每个令牌。']),image('https://stitch.withgoogle.com/docs/design-systems-create.png','通过提示词创建设计系统','通过提示词创建设计系统'),prompt([{key:'提示词',value:'一个温暖、圆角、友好的手作咖啡店点单应用。'}]),image('https://stitch.withgoogle.com/docs/design-system-import-from-website.png','从网站导入设计系统','从网站导入设计系统')]),
  S('最小示例',[code('---\nname: DevFocus Dark\ncolors:\n  primary: "#2665fd"\n  surface: "#0b1326"\n  on-surface: "#dae2fd"\ntypography:\n  body-md:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: 400\n---\n\n# Design intent\nUse a focused dark workspace with clear blue actions.','DESIGN.md')])
 ],link('/docs/design-md/get-instructions/','从代码库导入')),
 P('/docs/design-md/get-instructions/','DESIGN.md','从代码库导入','从现有网站或应用代码中提取视觉规则，生成一份 DESIGN.md。',[
