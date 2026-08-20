@@ -3,7 +3,7 @@ name: 部署中文 Stitch 文档站
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -29,7 +29,7 @@ jobs:
       - name: 上传站点构件
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: outputs/stitch-docs-cn
       - name: 发布到 GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
