@@ -1,8 +1,9 @@
+# Stitch 中文文档站 GitHub Pages 部署
 name: 部署中文 Stitch 文档站
 
 on:
   push:
-    branches: [master]
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
@@ -22,21 +23,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 检出仓库
-        uses: actions/checkout@v7
-
+        uses: actions/checkout@v4
       - name: 配置 Pages
-        uses: actions/configure-pages@v6
-
-      - name: 准备站点文件
-        run: |
-          mkdir -p _site
-          cp -R outputs/stitch-docs-cn/. _site/
-
-      - name: 上传 Pages 构件
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/configure-pages@v5
+      - name: 上传站点构件
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
       - name: 发布到 GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
